@@ -16,7 +16,7 @@ s = input().rstrip()
 ans = 0
 
 for c in s:
-    if int(c) < 1 or ans < 1:
+    if int(c) <= 1 or ans <= 1:
         ans += int(c)
     else:
         ans *= int(c)
