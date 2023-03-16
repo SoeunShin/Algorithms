@@ -32,3 +32,5 @@ for i in range(n):
             level[i-1] += 1
 
 print(level)
+
+# <<<< 미완성 >>>>
