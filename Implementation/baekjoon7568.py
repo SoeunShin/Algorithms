@@ -14,23 +14,23 @@ input = sys.stdin.readline
 
 n = int(input())
 arr = []
-level = [0,]
+level = []
 
 for _ in range(n):
     a, b = map(int, input().split())
     arr.append((a,b))
 
-wmax = 0
-hmax = 0
-
 for i in range(n):
-    if arr[i][0] > wmax and arr[i][1] > hmax:
-        wmax = arr[i][0]
-        hmax = arr[i][1]
-        level[i] = 1
-        if i > 0:
-            level[i-1] += 1
+    cnt = 0
+    for j in range(n):
+        if arr[i][0] < arr[j][0] and arr[i][1] < arr[j][1]:
+            cnt += 1
+    level.append(cnt + 1)
 
-print(level)
+for i in level:
+    print(i, end=' ')
 
-# <<<< 미완성 >>>>
+# 메모리 31256
+# 시간 40
+# 코드 길이 355
+
