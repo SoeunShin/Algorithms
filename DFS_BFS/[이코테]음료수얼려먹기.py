@@ -44,7 +44,7 @@ n, m = map(int, input().split())
 
 graph = []
 for i in range(n):
-    graph.append(list(map(int, input())))
+    graph.append(list(map(int, input().rstrip())))
 
 result = 0
 for i in range(n):
