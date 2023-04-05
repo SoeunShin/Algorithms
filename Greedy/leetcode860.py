@@ -1,4 +1,4 @@
-# 860. Lemonade Change
+# LeetCode 860. Lemonade Change
 
 """
 At a lemonade stand, each lemonade costs $5. Customers are standing in a queue
