@@ -1,4 +1,4 @@
-# 1323. Maximum 69 Number
+# LeetCode 1323. Maximum 69 Number
 
 """
 You are given a positive integer num consisting only of digits 6 and 9.
