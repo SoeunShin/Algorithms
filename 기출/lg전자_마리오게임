@@ -18,28 +18,33 @@ Input
 Output
 17
 """
+
 import sys
 input = sys.stdin.readline
 
 num = int(input())
 arr = list(map(int, input().split()))
-time = 1
-result = 0
 
-for i in range(num):
-    if i != num-1: # 마지막 숫자가 아닐 때 
-        if time % 2 == 1: # 홀수 - 커짐 
-            if arr[i] >= arr[i+1]: # 현재 값이 다음 값보다 크거나 같으면 
+def mario(num, arr):
+    time = 1
+    result = 0
+    
+    for i in range(num):
+        if i != num-1: # 마지막 숫자가 아닐 때 
+            if time % 2 == 1: # 홀수 - 커짐 
+                if arr[i] >= arr[i+1]: # 현재 값이 다음 값보다 크거나 같으면 
+                    result += arr[i]
+                    time += 1
+                else: pass
+            else: # 짝수 - 작아짐 
+                if arr[i] <= arr[i+1]: # 현재 값이 다음 값보다 작거나 같으면 
+                    result -= arr[i]
+                    time += 1
+                else: pass
+        else: # 마지막 숫자일 때 
+            if time % 2 == 1: # 커질 차례이면 
                 result += arr[i]
-                time += 1
-            else: pass
-        else: # 짝수 - 작아짐 
-            if arr[i] <= arr[i+1]: # 현재 값이 다음 값보다 작거나 같으면 
-                result -= arr[i]
-                time += 1
-            else: pass
-    else: # 마지막 숫자일 때 
-        if time % 2 == 1: # 커질 차례이면 
-            result += arr[i]
-            time += 1 # 안 해줘도 됨 
-print(result)
+                time += 1 # 안 해줘도 됨
+    return result
+
+print(mario(num, arr))
