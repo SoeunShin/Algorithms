@@ -1,0 +1,45 @@
+# LG전자 기출문제 [마리오 게임]
+
+"""
+마리오 게임은 버섯을 규칙에 맞게 먹어서 키를 최대한 키우는 단순한 게임으로 가장 키를 많이 키운 사람이 우승이다.
+
+버섯을 먹는 규칙
+1. 버섯은 0번 부터 순서대로 먹을지 먹지 않을지 결정해야 함
+2. 첫 번째로 먹은 버섯의 숫자만큼 키가 커짐
+3. 두 번째로 먹은 버섯의 숫자만큼 키가 작아짐
+4. 즉, 홀수 번째로 먹은 버섯의 숫자만큼 커지고 짝수 번째로 먹은 숫자만큼 작 아짐
+
+버섯을 적절하게 먹었을 때 키를 키울 수 있는 최대값을 출력
+
+Input
+8
+7 2 1 8 4 3 5 6
+
+Output
+17
+"""
+import sys
+input = sys.stdin.readline
+
+num = int(input())
+arr = list(map(int, input().split()))
+time = 1
+result = 0
+
+for i in range(num):
+    if i != num-1: # 마지막 숫자가 아닐 때 
+        if time % 2 == 1: # 홀수 - 커짐 
+            if arr[i] >= arr[i+1]: # 현재 값이 다음 값보다 크거나 같으면 
+                result += arr[i]
+                time += 1
+            else: pass
+        else: # 짝수 - 작아짐 
+            if arr[i] <= arr[i+1]:  # 현재 값이 다음 값보다 작거나 같으면 
+                result -= arr[i]
+                time += 1
+            else: pass
+    else: # 마지막 숫자일 때 
+        if time % 2 == 1: # 커질 차례이면 
+            result += arr[i]
+            time += 1 # 안 해줘도 됨 
+print(result)
