@@ -6,6 +6,12 @@
 my_str	            n	    result
 "abc1Addfggg4556b"	6	    ["abc1Ad", "dfggg4", "556b"]
 "abcdef123"	        3	    ["abc", "def", "123"]
+
+입출력 예 #1
+"abc1Addfggg4556b" 를 길이 6씩 잘라 배열에 저장한 ["abc1Ad", "dfggg4", "556b"]를 return해야 합니다.
+
+입출력 예 #2
+"abcdef123" 를 길이 3씩 잘라 배열에 저장한 ["abc", "def", "123"]를 return해야 합니다.
 """
 
 def solution(my_str, n):
