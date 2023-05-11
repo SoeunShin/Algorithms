@@ -24,4 +24,4 @@ class Solution:
             if not left or not right:
                 return False
             return left.val == right.val and isSubtreeSymmetric(left.left, right.right) and isSubtreeSymmetric(right.right, left.left)
-        return isSubtreeSymmetric(root, root)
+        return isSubtreeSymmetric(root, root) 
