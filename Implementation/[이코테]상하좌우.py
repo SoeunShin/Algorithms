@@ -17,25 +17,6 @@ arr = input().split()
 
 x, y = 1, 1
 
-"""
-nx, ny = 1, 1 # 왜???
-
-for p in arr:
-    if p == 'L':
-        ny = y - 1
-    elif p == 'R':
-        ny = y + 1
-    elif p == 'U':
-        nx = x - 1
-    else:
-        nx = x + 1
-    if nx > n or ny > n or nx < 1 or ny < 1:
-        continue
-    x, y = nx, ny
-
-print(x, y)
-"""
-
 types = ['L', 'R', 'U', 'D']
 dx = [0, 0, -1, 1]
 dy = [-1, 1, 0, 0]
