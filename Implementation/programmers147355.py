@@ -13,7 +13,7 @@
 
 def solution(t, p):
     cnt = 0
-    for i in range(len(t)-len(p)+1):
+    for i in range(len(t)-len(p)+1): # t와 p의 길이의 차만큼 반복 (마지막 인덱스 포함되지 않으므로 +1)
         if int(t[i:i+len(p)]) <= int(p):
             cnt += 1
     return cnt
